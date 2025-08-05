@@ -70,16 +70,50 @@
 # print(acc1.getBalance())
 
 
-class Person:
-    __name = "Rajdeep Rangra"  # private variable
+# class Person:
+#     __name = "Rajdeep Rangra"  # private variable
 
-    def __hello(self):
-        return f"Hello, this is a private method. My name is {self.__name}"
+#     def __hello(self):
+#         return f"Hello, this is a private method. My name is {self.__name}"
 
-    def welcome(self):
-        return self.__hello()
+#     def welcome(self):
+#         return self.__hello()
 
-p1 = Person()
-print(p1.welcome())                  # Accessing via method
-print(p1._Person__name)              # Accessing directly (not recommended outside debugging/testing)
+# p1 = Person()
+# print(p1.welcome())                  # Accessing via method
+# print(p1._Person__name)              # Accessing directly (not recommended outside debugging/testing)
 
+class Car:
+    @staticmethod
+    def start():
+        print("Car is starting...")
+
+    @staticmethod
+    def stop():
+        print("Car is stopping...")    
+
+
+class Toyota(Car):     
+    def __init__(self, brand):
+        self.brand = brand  
+
+class Fortuner(Toyota):
+    def __init__(self, type):
+            self.type = type
+
+    def __str__(self):
+        return f"{self.name} is a {self.brand} car."          
+
+    # car1 = Toyota("Toyota Camry")
+    # car2 = Toyota("Prius")
+    # print(car1.name)  # Output: Prius
+    # print(car2.name)  # Output: Prius
+
+car1 = Fortuner("Petrol")
+car1.start()  # Output: Car is starting...
+car1.stop()   # Output: Car is stopping...
+
+# Type of Inheritance
+# 1. Single Inheritance
+# 2. Multiple Inheritance
+# 3. Multilevel Inheritance
