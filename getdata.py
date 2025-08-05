@@ -8,11 +8,14 @@ conn =mysql.connector.connect(
 
 cursor = conn.cursor()
 print("Connected to the database")
-query = "update student set name ='Rocky Rangra',email='rajdeep@gmail.com' where id = 1"
+query = "select * from  student"
 cursor.execute(query)  # execute the update query
-conn.commit()        # commit the changes to the database
-print("Data updated successfully")
-
+results = cursor.fetchall()
+for row in results:
+    print("student name is ",row[1])  # Print each row of the result set
+    print("student email is ",row[2])  # Print each row of the result set
+    print()
+print("Data fetched successfully")
 cursor.close()
 conn.close()
 
